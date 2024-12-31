@@ -11,8 +11,21 @@ form input {
     width: 100%;
 }
 
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Отступ между элементами */
+    align-items: flex-start;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center; /* Центрирование текста и чекбокса по вертикали */
+    gap: 8px; /* Расстояние между чекбоксом и текстом */
+    font-size: 16px; /* Размер текста */
+}
+
 input[type="checkbox"] {
-    position: relative;
-    top: 28px; /* Сдвиг вниз */
-    left: -550px; /* Сдвиг влево */
+    width: 20px;
+    height: 20px;
 }
