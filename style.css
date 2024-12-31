@@ -10,3 +10,9 @@ form input {
     padding: 5px;
     width: 100%;
 }
+
+input[type="checkbox"] {
+    position: relative;
+    top: 28px; /* Сдвиг вниз */
+    left: -550px; /* Сдвиг влево */
+}

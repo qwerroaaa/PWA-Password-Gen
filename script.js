@@ -4,11 +4,33 @@ document.addEventListener("DOMContentLoaded", () => {
     const generateButton = document.getElementById("generate-password");
 
     // Функция генерации пароля
-    function generatePassword(length = 12) {
-        const chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*()";
+    function generatePassword(length = 12, options = { 
+        useUppercase: true, 
+        useLowercase: true, 
+        useNumbers: true, 
+        useSpecial: true 
+    }) {
+        const chars = {
+            uppercase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
+            lowercase: "abcdefghijklmnopqrstuvwxyz",
+            numbers: "0123456789",
+            special: "!@#$%^&*()",
+        };
+
+        let charPool = "";
+        if (options.useUppercase) charPool += chars.uppercase;
+        if (options.useLowercase) charPool += chars.lowercase;
+        if (options.useNumbers) charPool += chars.numbers;
+        if (options.useSpecial) charPool += chars.special;
+
+        if (charPool === "") {
+            alert("Выберите хотя бы одну категорию символов для генерации пароля.");
+            return "";
+        }
+
         let password = "";
         for (let i = 0; i < length; i++) {
-            password += chars.charAt(Math.floor(Math.random() * chars.length));
+            password += charPool.charAt(Math.floor(Math.random() * charPool.length));
         }
         return password;
     }
@@ -36,9 +58,31 @@ document.addEventListener("DOMContentLoaded", () => {
         updatePasswordList();
     });
 
+    // Проверка длины пароля
+    function validatePasswordLength(length) {
+        if (isNaN(length) || length < 4 || length > 32) {
+            alert("Длина пароля должна быть от 4 до 32 символов!");
+            return false;
+        }
+        return true;
+    }
+
     // Генерация пароля
     generateButton.addEventListener("click", () => {
-        document.getElementById("password").value = generatePassword();
+        const length = parseInt(document.getElementById("password-length").value);
+        const useUppercase = document.getElementById("use-uppercase").checked;
+        const useLowercase = document.getElementById("use-lowercase").checked;
+        const useNumbers = document.getElementById("use-numbers").checked;
+        const useSpecial = document.getElementById("use-special").checked;
+
+        if (validatePasswordLength(length)) {
+            document.getElementById("password").value = generatePassword(length, {
+                useUppercase,
+                useLowercase,
+                useNumbers,
+                useSpecial
+            });
+        }
     });
 
     // Инициализация

@@ -9,14 +9,26 @@
 </head>
 <body>
     <h1>Password Manager</h1>
-    <div id="password-list"></div>
     <form id="add-password-form">
         <input type="text" id="login" placeholder="Login" required>
         <input type="url" id="url" placeholder="URL" required>
-        <input type="text" id="password" placeholder="Password" required>
+        <div>
+            <label for="password-length">Длина пароля:</label>
+            <input type="number" id="password-length" min="4" max="32" placeholder="Password length" required>
+        </div>
+        <div>
+            <label><input type="checkbox" id="use-uppercase" checked> Заглавные буквы</label>
+            <label><input type="checkbox" id="use-lowercase" checked> Строчные буквы</label>
+            <label><input type="checkbox" id="use-numbers" checked> Цифры</label>
+            <label><input type="checkbox" id="use-special" checked> Специальные символы</label>
+        </div>
+        <p></p>
         <button type="button" id="generate-password">Generate Password</button>
-        <button type="submit">Add Password</button>
+        <button type="submit">Add record</button>
+        <p>Ваш сгенерированный пароль:</p>
+        <input type="text" id="password" placeholder="Password" required>
     </form>
+    <div id="password-list"></div>
     <script src="script.js"></script>
 </body>
 </html>
