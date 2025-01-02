@@ -18,13 +18,19 @@
 <h1>Как установить на платформу?</h1>
 <h3>На компьютер:</h3>
 <p>В URL ссылке нажмите на значок, который изображен на картинке</p>
+
 ![image](https://github.com/user-attachments/assets/3f41a18f-1635-4759-8104-2f65ebd0ed17)
+
 <p>У вас отобразиться оповещение, где нажимаете установить:</p>
+
 ![image](https://github.com/user-attachments/assets/883d811b-6274-4748-8320-57f71d0f4dc8)
 
 <h3>На телефон:</h3>
 <p>Действия теже только вместо значка на URL ссылке, нажимаете на три точки, далее действие "установить на главный экран"</p>
+
 ![image](https://github.com/user-attachments/assets/33c2585d-8dbe-4ede-a3e3-3f2ddeac63c6)
+
 <p>Далее на кнопку "Установить"</p>
+
 ![image](https://github.com/user-attachments/assets/5cdbe9e7-a904-4d2e-8da0-8cc27911c546)
 
